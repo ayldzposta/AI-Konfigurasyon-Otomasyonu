@@ -30,3 +30,12 @@ Betikli doğrudan çalıştırmak, varsayılan Prompt-Master kurallarını indir
 
 ```bash
 python3 installer.py
+
+
+
+
+
+Gelişmiş Özelleştirme Örnekleri1. Farklı bir GitHub reposundan veya kural dosyasından kurulum yapmak:Bashpython3 installer.py --repo-url "[https://github.com/kullanici/ozel-kurallar/archive/refs/heads/main.zip](https://github.com/kullanici/ozel-kurallar/archive/refs/heads/main.zip)" --skill-file "RULES.md" --extract-root "ozel-kurallar-main"
+2. Kullanıcı onay ekranını atlayarak (Sessiz Mod) kurulum yapmak (CI/CD / Otomasyon için):Bashpython3 installer.py -y
+3. Global kuralları tamamen atlayıp sadece mevcut proje dizinine kurmak:Bashpython3 installer.py --no-global
+📊 Komut Satırı ParametreleriParametreVarsayılan DeğerAçıklama--dirMevcut çalışma diziniKurulumun yapılacağı yerel proje/çalışma dizini.-y, --yesFalseGlobal kuralların kurulumu için onay istemez, doğrudan onaylar.--no-globalFalseGlobal kuralların (~/.cursorrules vb.) kurulumunu tamamen devre dışı bırakır.--repo-urlPrompt-Master Ana Deposuİndirilecek ZIP arşivinin URL adresi.--skill-fileSKILL.mdZIP arşivi içerisinde aranacak ana kural/beceri dosyasının adı.--extract-rootprompt-master-mainZIP içindeki ana kök klasör kalıbı (GitHub zip mimarisi).--claude-dir~/.claude/skills/prompt-masterClaude Code için hedef skills dizini.--cursor-skills-dir~/.cursor/skills-cursor/...Cursor için özel skills dizini.--gemini-skills-dir~/.gemini/skills-antigravity/...Gemini / Antigravity için hedef skills dizini.--extra-global-rule(Liste)Ekstra kopyalanmasını istediğiniz global kural dosyası yolları (Birden fazla kez kullanılabilir).🎯 Kurulum Sonrası Yapay Zekayı Nasıl Kullanırım?Kurulum başarıyla tamamlandıktan sonra, yapay zekalarınız (örneğin Claude Code veya Cursor) arka planda bu kuralları otomatik olarak okur. Onlarla konuşurken doğrudan şu tarz komutlar verebilirsiniz:Claude Code İçinde (Prompt Üretmek İçin):“Write me a prompt for Cursor to refactor my auth module”“I need a prompt for Claude Code to build a REST API — ask me what you need to know”Cursor, Windsurf, Gemini vb. Editörlerde:Herhangi bir şey yapmanıza gerek yok! Global kurallar sayesinde açtığınız tüm projelerde yapay zeka artık bir Prompt Engineer gibi davranacak ve temiz, standartlara uygun kodlar üretecektir.📄 LisansBu proje MIT Lisansı ile lisanslanmıştır. Daha fazla bilgi için LICENSE dosyasına göz atabilirsiniz.
