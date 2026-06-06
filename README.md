@@ -1,6 +1,4 @@
-İşte projenin kök dizinine doğrudan **README.md** adıyla kaydedebileceğin, tüm içeriği tek parça halinde sunan Markdown kodu:
 
-```markdown
 # 🚀 AI Konfigürasyon Otomasyonu (Prompt-Master Universal Installer)
 
 [![Python Version](https://img.shields.io/badge/python-3.8%2B-blue.svg)](https://www.python.org)
